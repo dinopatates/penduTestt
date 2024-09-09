@@ -1,8 +1,11 @@
 let keys = document.querySelectorAll(".key");
 let hiddenNameContainer = document.querySelector(".hidden-name-container")
-let allHiddenLetters = document.querySelectorAll(".hidden-letters")
-let word = "bite"
+let hangImage = document.querySelector(".hang-image")
+let word = "dinode"
 let selectedKey = ""
+let isThereAtLeastOneLetter = false
+let hangCharacterStep = 0
+
 
 
 for (let j = 0; j < word.length; j++) {  //créer les cases où sont cachées les lettres
@@ -15,18 +18,22 @@ for (let j = 0; j < word.length; j++) {  //créer les cases où sont cachées le
     hiddenNameContainer.appendChild(hiddenLetter)
 }
 
+let allHiddenLetters = document.querySelectorAll(".hidden-letters")
 
 
-function checkLetters(key) {
+
+function checkLetters(key) {  //vérrifie si le mot caché contient la lettre cliquée
     console.log("function enabled")
-    for (let p = 0; p < allHiddenLetters; p++) {
+    console.log(allHiddenLetters.length)
+    for(let p = 0; p < allHiddenLetters.length; p++) {
         console.log("loop")
         if (allHiddenLetters[p].value === key) {
-            console.log(allHiddenLetters[i].value || key)
-            allHiddenLetters[p].textContent = allHiddenLetters[p]
+            isThereAtLeastOneLetter = true
+            console.log(allHiddenLetters[p].value || key)
+            allHiddenLetters[p].textContent = allHiddenLetters[p].value
         }
-        else {
-            console.log("no")
+        else if(isThereAtLeastOneLetter === false) {
+            hangCharacterStep++
         }
     }
 }
