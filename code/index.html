@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <div class="won end-screen hidden">
+        <p>Vous avez gagné!</p>
+        <a class="retry-link" href="index.html">Nouvelle partie</a>
+    </div>
+    <div class="lost end-screen hidden">
+        <p>Vous avez perdu...</p>
+        <a class="retry-link" href="index.html">Nouvelle partie</a>
+    </div>
     <main>
         <div class="upper-part">
             <div class="play-part">
@@ -48,7 +56,7 @@
                     <div id="y" class="key">Y</div>
                     <div id="z" class="key">Z</div>
                 </div>
-                <a href="index.html">Nouvelle Partie</a>
+                <a class="retry-link" href="index.html">Nouvelle Partie</a>
             </div>
             <div class="hang-part">
                 <img class="hang-image" src="" alt="bonhomme pendu">

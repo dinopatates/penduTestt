@@ -1,71 +1,272 @@
-body {
-    height: 100vh;
-    width: 100vw;
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: sans-serif;
+@media screen and (max-width: 700px) {
+
+    body {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+    }
+
+    main {
+        background-color: rgb(255, 230, 0);
+        padding: 0px;
+        width: 95vw;
+        height: 80vh;
+        border-style: solid;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .upper-part {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 600px;
+        font-size: small;
+
+    }
+
+    .play-part {
+        width: 70%;
+        margin: 30px;
+    }
+
+    .keyboard {
+        width: 300px;
+        background-color: rgb(56, 121, 219);
+        display: grid;
+        grid-template-columns: repeat(10, 3fr);
+        padding: 10px;
+        margin-bottom: 25px;
+        font-family: serif;
+        font-size: large;
+        border-style: solid;
+        border-width: 5px;
+        border-top-color: aliceblue;
+        border-left-color: aliceblue;
+        border-right-color: black;
+        border-bottom-color: black;
+    }
+
+    .key {
+        height: 15px;
+        width: 15px;
+        margin: 1px;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .key:hover {
+        cursor: pointer;
+    }
+
+    .disabled-key {
+        background-color: rgb(131, 255, 152);
+
+    }
+
+    .retry-link {
+        font-family: serif;
+        font-size: x-large;
+        text-decoration: none;
+        color: blue;
+    }
+
+    .hang-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+
+    .hidden-name-container {
+        height: 30px;
+        margin-left: 20px;
+        display: flex;
+    }
+
+    .hidden-letters {
+        width: 30px;
+        height: 30px;
+        background-color: rgb(112, 226, 163);
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 0px;
+        border-top-style: solid;
+        border-left-style: solid;
+        border-width: 2px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .end-screen {
+        width: 100vw;
+        height: 100vh;
+        margin: 0px;
+        background-color: #1b1b1baa;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: xxx-large;
+    }
+
+    .won {
+        color: rgb(53, 204, 47);
+    }
+
+    .lost {
+        color: rgb(204, 47, 47);
+    }
+
+    .answer {
+        color: white;
+    }
+
+    .hidden {
+        display: none;
+    }
 }
 
-main {
-    background-color: yellow;
-    width: 1000px;
-    height: 500px;
-    border-style: solid;
-}
+@media screen and (min-width: 700px) {
 
-.upper-part {
-    display: flex;
-    height: 400px;
-}
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+    }
 
-.play-part {
-    width: 70%;
-    margin: 30px;
-}
+    main {
+        background-color: rgb(255, 230, 0);
+        width: 1000px;
+        height: 500px;
+        border-style: solid;
+    }
 
-.keyboard {
-    width: 400px;
-    background-color: blue;
-    display: grid;
-    grid-template-columns: repeat(10, 3fr);
-    padding: 10px;
-}
+    .upper-part {
+        display: flex;
+        height: 400px;
+    }
 
-.key {
-    height: 30px;
-    width: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-style: solid;
-}
+    .play-part {
+        width: 70%;
+        margin: 30px;
+    }
 
-.hang-part {
-    width: 30%;
-display: flex;
-justify-content: center;
-align-items: center;
-}
+    .keyboard {
+        width: 350px;
+        background-color: rgb(56, 121, 219);
+        display: grid;
+        grid-template-columns: repeat(10, 3fr);
+        padding: 10px;
+        margin-bottom: 25px;
+        font-family: serif;
+        font-size: x-large;
+        border-style: solid;
+        border-width: 5px;
+        border-top-color: aliceblue;
+        border-left-color: aliceblue;
+        border-right-color: black;
+        border-bottom-color: black;
+    }
 
-.hidden-name-container {
-    background-color: green;
-    height: 50px;
-    width: 450px;
-    display: flex;
-}
+    .key {
+        height: 25px;
+        width: 25px;
+        margin: 1px;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-style: solid;
+        border-width: 1px;
+    }
 
-.hidden-letters {
-width: 45px;
-height: 45px;
-background-color: greenyellow;
-margin-left: 10px;
-margin-right: 10px;
-border-style: solid;
-display: flex;
-justify-content: center;
-align-items: center;
+    .key:hover {
+        cursor: pointer;
+    }
+
+    .disabled-key {
+        background-color: rgb(131, 255, 152);
+
+    }
+
+    .retry-link {
+        font-family: serif;
+        font-size: x-large;
+        text-decoration: none;
+        color: blue;
+    }
+
+    .hang-part {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hidden-name-container {
+        height: 70px;
+        margin-left: 20px;
+        display: flex;
+    }
+
+    .hidden-letters {
+        width: 55px;
+        height: 55px;
+        background-color: rgb(112, 226, 163);
+        margin-left: 10px;
+        margin-right: 10px;
+        border-top-style: solid;
+        border-left-style: solid;
+        border-width: 2px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .end-screen {
+        width: 100vw;
+        height: 100vh;
+        margin: 0px;
+        background-color: #1b1b1baa;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: xxx-large;
+    }
+
+    .won {
+        color: rgb(53, 204, 47);
+    }
+
+    .lost {
+        color: rgb(204, 47, 47);
+    }
+
+    .answer {
+        color: white;
+    }
+
+    .hidden {
+        display: none;
+    }
+
 }
