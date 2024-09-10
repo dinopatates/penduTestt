@@ -10,13 +10,13 @@ let hangCharacterStep = 0
 let clicked = true
 let hangCharacterImageSource = "/images/pendu_" + hangCharacterStep + ".jpg"
 hangImage.src = hangCharacterImageSource
-let key;
+let key; //variable vide qui sera établie plus tard étant donné qu'on ne peut pas accéder à l'intérieur du rayon de la boucle
 let numberOfAnswer = 0
 let answer = document.createElement("p")
 
 const url = 'https://randomuser.me/api/?nat=fr&inc=name';
 
-fetch(url, {
+fetch(url, {  //récup. l'API pour avoir les noms au hasard
     method: 'GET',
     headers: {
     }
@@ -30,7 +30,7 @@ fetch(url, {
     .then(data => {
         console.log(data);
         let word = data.results[0].name.first
-        console.log(word)
+        console.log("réponse: " + word)
         word = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         word = word.toLowerCase()
         answer.textContent = "La réponse était: " + word
@@ -40,7 +40,6 @@ fetch(url, {
 
             hiddenLetter.classList.add("hidden-letters")
             hiddenLetter.value = word[j]
-            console.log(hiddenLetter.value)
 
             hiddenNameContainer.appendChild(hiddenLetter)
         }
@@ -56,21 +55,14 @@ fetch(url, {
                 keys[i].classList.add("disabled-key")
             })
         }
-
-
         function checkLetters(key, y) {  //vérrifie si le mot caché contient la lettre cliquée
-            key = keys[y];
-            console.log(key)
-            console.log("function enabled")
-            console.log(allHiddenLetters.length)
+            key = keys[y]; //intialisation de key qui représente la div en elle même
             if (word.includes(selectedKey)) {
-                console.log("good")
                 isThereAtLeastOneLetter = true
                 for (let i = 0; i < allHiddenLetters.length; i++) {
                     if (allHiddenLetters[i].value === key.id) {
                         allHiddenLetters[i].textContent = allHiddenLetters[i].value
-                        numberOfAnswer += 1
-                        console.log("answer length:" + numberOfAnswer)
+                        numberOfAnswer++
                         if (numberOfAnswer >= allHiddenLetters.length) {
                             wonScreen.classList.remove("hidden")
                         }
@@ -79,12 +71,12 @@ fetch(url, {
             }
             else { //avance le stage du bonhomme pendu quand il y a une faute
                 if (key.classList.contains('disabled-key')) {
-                    return null
+                    return null //vérrifie si une touche est déjà cliquée
                 }
                 hangCharacterStep++
                 hangCharacterImageSource = "/images/pendu_" + hangCharacterStep + ".jpg"
                 hangImage.src = hangCharacterImageSource
-                hangImage.alt = "bonhomme pendu stage: " + hangCharacterStep
+                hangImage.alt = "bonhomme pendu stage: " + hangCharacterStep + " (max: 9)"
                 if (hangCharacterStep >= 9) {
                     hangImage.alt = "bonhomme pendu stage: " + "mort"
                     lostScreen.classList.remove("hidden")
@@ -93,8 +85,6 @@ fetch(url, {
                 }
             }
         }
-
-
     })
     .catch(error => {
         console.error('Erreur :', error);

@@ -2,6 +2,7 @@
 
     body {
         width: 100vw;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -10,9 +11,8 @@
 
     main {
         background-color: rgb(255, 230, 0);
-        padding: 0px;
+        padding: 30px;
         width: 95vw;
-        height: 80vh;
         border-style: solid;
         display: flex;
         flex-direction: column;
@@ -22,7 +22,7 @@
         display: flex;
         flex-direction: column-reverse;
         height: 600px;
-        font-size: small;
+        font-size: x-small;
 
     }
 
@@ -37,7 +37,6 @@
         display: grid;
         grid-template-columns: repeat(10, 3fr);
         padding: 10px;
-        margin-bottom: 25px;
         font-family: serif;
         font-size: large;
         border-style: solid;
@@ -82,7 +81,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100px;
     }
 
     .hidden-name-container {
@@ -101,6 +99,7 @@
         border-top-style: solid;
         border-left-style: solid;
         border-width: 2px;
+        font-family: serif;
 
         display: flex;
         justify-content: center;
@@ -117,7 +116,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-size: xxx-large;
+        font-size: large;
     }
 
     .won {
